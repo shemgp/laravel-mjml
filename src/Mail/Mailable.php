@@ -59,6 +59,8 @@ class Mailable extends IlluminateMailable
      */
     protected function buildMjmlView()
     {
+        $this->viewData = $this->buildViewData();
+        
         $view = View::make($this->mjml, $this->viewData);
         $mjml = new MJML($view);
 
